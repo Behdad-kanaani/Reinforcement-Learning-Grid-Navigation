@@ -1,79 +1,100 @@
+# 🧠 Reinforcement Learning: Grid Navigation Agent
 
+![Project Demo](https://github.com/Behdad-kanaani/Reinforcement-Learning-Grid-Navigation/blob/main/demo.png)
+*Watch the agent learn to navigate the grid in real-time!*
 
-# 🧠 Reinforcement Learning Grid Navigation 🚀
+A hands-on **Reinforcement Learning (RL)** project demonstrating how an agent learns to navigate a 2D grid using the **Q-learning algorithm**. The goal is to reach the target efficiently while avoiding obstacles. Perfect for learning RL concepts visually and interactively!
 
-## 🌟 Project Overview
+---
 
-This project demonstrates a **Reinforcement Learning (RL)** agent navigating a grid environment. The agent uses **Q-learning** to learn the optimal path from several possible start positions to a goal, while avoiding obstacles. The environment is visualized using **Pygame**, where obstacles are shown in red, the agent’s learned path in yellow, and the agent itself is represented by a blue square.
+## ✨ Key Features
 
-## 🔥 Features
+* **🖱 Interactive Controls:** Click to set start/goal positions and add/remove obstacles.
+* **📈 Real-time Learning:** Observe the agent exploring and improving its strategy dynamically.
+* **🎲 Randomized Environments:** Test adaptability with random obstacle layouts.
+* **⏩ Adjustable Speed:** Control simulation speed to analyze the learning process step by step.
+* **🌙 Modern Dark Theme:** Clean interface with subtle animations for a professional feel.
 
-* **Grid Environment**: The grid is customizable with configurable width, height, and tile size. Obstacles are randomly placed throughout the grid.
-* **Q-Learning Agent**: The agent uses Q-learning to determine the best path to the goal while avoiding obstacles. The Q-table is updated based on rewards for valid moves, penalties for hitting obstacles, and rewards for reaching the goal.
-* **Exploration vs Exploitation**: The agent follows an **epsilon-greedy** strategy, balancing between **exploration** (random actions to explore new paths) and **exploitation** (choosing the best-known path based on learned Q-values).
-* **Multiple Start Positions**: The agent can start from several positions on the grid, offering diverse learning opportunities.
-* **Obstacle Handling**: The agent learns to avoid obstacles and is penalized for invalid moves.
-* **Visualization**: The agent’s learning process and pathfinding are visualized in real-time using Pygame.
+---
 
-## 📦 Requirements
+## 🧩 How It Works
+
+The project consists of **two main components**:
+
+### 1️⃣ Q-learning Core
+
+* Implements the Q-learning algorithm.
+* Rewards the agent for reaching the goal.
+* Penalizes collisions and unnecessary steps.
+* Continuously updates the Q-table to improve performance.
+
+### 2️⃣ Interactive GUI (Pygame)
+
+* Visualizes the agent’s learning journey in real-time.
+* Provides an interactive environment for experimentation.
+* Dynamic updates make learning both educational and fun.
+
+---
+
+## ⚙️ Prerequisites
 
 * Python 3.x
-* `pygame`
-* `numpy`
+* [NumPy](https://numpy.org/)
+* [Pygame](https://www.pygame.org/news)
 
-Install the dependencies by running the following:
+---
+
+## 🛠 Installation
+
+1. Clone the repository:
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/Behdad-kanaani/Reinforcement-Learning-Grid-Navigation.git
+cd Reinforcement-Learning-Grid-Navigation
 ```
 
-## 🚀 Installation
+2. Install dependencies:
 
-1. **Clone the repository**:
+```bash
+pip install numpy pygame
+```
 
-   ```bash
-   git clone https://github.com/your-username/Reinforcement-Learning-Grid-Navigation.git
-   ```
+---
 
-2. **Install dependencies**:
+## ▶️ Running the Simulation
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+python update_GUI.py
+```
 
-3. **Run the main script**:
+* Set start and goal positions.
+* Add/remove obstacles dynamically.
+* Adjust simulation speed and watch the agent learn in real-time.
 
-   ```bash
-   python main.py
-   ```
+---
 
-Once you run the script, the agent will begin learning and navigating the grid. The entire process will be visualized, showing the agent’s movement, obstacles, and the learned path.
+## 📚 Learning Outcomes
 
-## 📖 Code Explanation
+* Visual understanding of **Q-learning**.
+* Experiment with **exploration vs. exploitation** strategies.
+* Observe how **reward shaping** affects learning efficiency.
+* Hands-on experience with **reinforcement learning algorithms**.
 
-### Q-Table
+---
 
-The Q-table is a 3D NumPy array where each grid cell holds Q-values corresponding to each possible action (down, up, right, left). These values are updated during training, guiding the agent towards better decisions over time.
+## 🏆 Highlights
 
-### Training Loop
+* Fully interactive, beginner-friendly RL environment.
+* Perfect for demos, teaching, and experimentation.
+* Easily extendable for research or advanced RL projects.
+* Modern, visually appealing interface for presentations.
 
-The agent starts from one of the selected start positions and learns over multiple episodes. During each episode, the agent selects actions based on an epsilon-greedy policy, updates the Q-table, and learns from the rewards and penalties it receives.
+---
 
-### Visualization
+## 📄 License
 
-After training, the agent’s learned path is displayed in real-time, showing its movements step by step. This allows you to track the agent’s progress and understand its decision-making process.
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See the [LICENSE](LICENSE) file for details.
 
-## 🖼️ Visual Representation
+---
 
-* **White Grid**: Empty grid cells where the agent can move.
-* **Red Squares**: Obstacles that the agent must avoid.
-* **Yellow Path**: The learned path of the agent.
-* **Blue Square**: The agent’s current position.
-se. Feel free to modify and use it for educational purposes!
-
-## 🙏 Acknowledgments
-
-* Special thanks to the **Pygame** library for providing the necessary tools to visualize the grid and agent's movements.
-* This project was built for educational purposes to demonstrate reinforcement learning in a grid environment.
-
-### This is a personal training project for me, and I hope it can be helpful to you as well. 😊 Thank you for your support! 🙏
+💡 **Pro Tip:** Experiment with different learning rates and discount factors in `update_GUI.py` to see how the agent’s behavior changes!
